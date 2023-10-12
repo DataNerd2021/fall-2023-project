@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "used-car-summer-2023-project",
+  "private_key_id": "20096915b1bf8a95014239be1eb13e89c523676c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC75Q6Fsu8PDjQ+\nck5ME0vwb/DxcTpRE8r1owt9pB/ab5JCj+NGnea9j6TY6+yTpdozSA1B771YJpTu\n3yy0Z4Wn6JKO7ZT8W5lw1N7rGL9xzin5Y15GfZAb54ap82io0nfoHxW56vgTZ9Xi\ny+d5cw0XY/9XFwmCwz59PCY3BjQGb19dXHOrPyfCE+45foV7byXgqU8N/rYhZaAw\nW888hImKd2pVRJ+YVpherldWHI1Zo2EoTQgrOzfOSzofka/aTaqwLx7e9sITa/RT\nxXnchT/341lXLAfQn1mxjcXsZ76oBKRFKoVyB8H+b2eGZQfKMHsE3+EbPMatw5Z9\nnCkTzSIFAgMBAAECggEAFR8HheH6W3/mQYrJ4GVe6PU8aXen7YtDCl+8n+/+IKjg\nERlpm/uN/4sRJc1Hd8VyBMe5rcrMRwd3QG7X8KOec6SCLQzp7YBCfFuBf331r05U\ni5Mu+s+MjoZ1Lc+N2URndDFiWNbf8hZ/BZKUP6O+Of3kqx6M1CUsdhl31kGdQYe7\n+3nV0W7NHBePWbCwuJwPe1vcZ5oatf90d/b2yk9fnbRez7qYw1N7sT2xWQ2ZPR3A\nyMZPdFnAF4sixzku6EDz/kjwakRKgCuO+FVo+oVALdDNhBQzvFueFcjL8REhQeym\nSyXOsSkFyd5+cYdlkcQnhk05aESYEWA0O7g8ICiPFQKBgQDvI1MCRglo6b3fZonb\nRcL5On+7jnRHIpUwpIlir5vG4MvG9FpuiPTSiJr/ffR+sCeAP0XvirDtU04j2rsg\nvQqSKN/7ddkrVHHTafI0qFLKh+1QWw0hL2tOY4daoG4IAcmlta0UaeOfumJUmbP2\nUPn5SBZZrHikDnNuIyStBIVu6wKBgQDJJL3jHxBWC0pd3t+XpJnJ6TeWpPLGj4pU\nZGajsD5rrpIUT6ozWzJok/fwpaHp8RF6ltd7OTAZt3HnYRdCGBbZ3ehKQOLEFAHW\njZY0Wk81AmV3JSKOWKsvXGF49UXWptvyXtZNPapWox21RhK2Cq8lq4aB2wu1KYmT\n1h/IN5DWzwKBgFqd5hyccYBh4mM/NcnzW3iZpEFsL7+s6R+vmafdp4frMwzHF2V/\nXFZTEXjzP6yqD63XTCcDRRwJTzji77nuKI1OE+HzvEFhFGjqYq91gTnh3BlxBz6l\n+2GO8YFz/X3nP4QdneJ4ZZrnQ8+PFtSlxrOhj2aXpnd0SmVXx9QQPIfVAoGBAIGE\nvyD4Z7SAIKrBUIh83Oo+2iSOoiVpWFFvNQhB/G+qQTYC9j2Lg7IDVawHe3MAX5jo\neGhIMsjcbuPmiOtuR4iSc3kcvugzWdul4Apl/IrNuDg4GUA/qDse6UTR6t6FIyu2\nFZg3FPAkqISJUpMV3iILiNklCyzkSkp/nod2ADXRAoGAen3B12yQEkeAIn+74roY\nSFkjuVIpaRfeRXU284EATKl5KnqMPi+952P2qg7aCNSEY4jxhdBpCzaKvh+iCgtI\nsGQlAJ/F8gebFUwDnDKfx2kMtkLDvq9djgkVTkDD48XuUVfmFyJicAoeEb2OW/XF\ntTWicZO4jNdPGz/lIvEvTz0=\n-----END PRIVATE KEY-----\n",
+  "client_email": "bigquery-accessor@used-car-summer-2023-project.iam.gserviceaccount.com",
+  "client_id": "101373795182695272153",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bigquery-accessor%40used-car-summer-2023-project.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
