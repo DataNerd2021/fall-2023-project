@@ -1,0 +1,17 @@
+blocks:
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: get_new_listings
+  status: failed
+  type: data_loader
+  upstream_blocks: []
+  uuid: get_new_listings
+data_integration: null
+name: rough cloud
+type: python
+uuid: rough_cloud
+widgets: []
