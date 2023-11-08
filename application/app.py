@@ -5,7 +5,7 @@ import os
 from PIL import Image
 
 st.title('Prediction App')
-training_data = pl.read_parquet(r'C:\Users\Chase\OneDrive\Documents\fall-2023-project\training_data.parquet')
+training_data = pl.read_parquet('../training_data.parquet')
 year_selection = st.slider(label='Year', min_value=2011, max_value=2023)
 
 col1, col2, col3 = st.columns([1,1,1])
@@ -43,7 +43,7 @@ with col3:
 
 col4, col5, col6 = st.columns([1,1,1])
 try:
-    path = f'C:\\Users\\Chase\\OneDrive\\Documents\\fall-2023-project\\images\\{year_selection}\\{make_selection.lower()}\\{model_selection.lower()}'
+    path = f'../images/{year_selection}/{make_selection.lower()}/{model_selection.lower()}'
     file_path1 = os.listdir(path)[0]
     file_path2 = os.listdir(path)[1]
     file_path3 = os.listdir(path)[2]
