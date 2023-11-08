@@ -1,12 +1,8 @@
 '''This will be the Front End Application'''
 import streamlit as st
-from google.cloud import bigquery
-from google.oauth2 import service_account
-
-
-credentials = service_account.Credentials.from_service_account_file \
-("../used-car-summer-2023-project-dfbd48707f94.json")
-
-bigquery_client = bigquery.Client(credentials=credentials, project='used-car-summer-2023-project')
+from PIL import Image
 
 st.title('Prediction App')
+
+image = Image.open(r'C:\Users\Chase\OneDrive\Documents\fall-2023-project\images\2011\dodge\challenger\000001.jpg')
+st.image(image, width=250)
