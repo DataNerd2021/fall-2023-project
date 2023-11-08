@@ -50,13 +50,13 @@ try:
     file_path3 = os.listdir(path)[2]
     with col4:
         image1 = Image.open(path+"\\"+file_path1)
-        st.image(image1, use_column_width='always')
+        st.image(image1, use_column_width='always', caption='src: Google Images')
     with col5:
         image2 = Image.open(path+"\\"+file_path2)
-        st.image(image2, use_column_width='always')
+        st.image(image2, use_column_width='always', caption='src: Google Images')
     with col6:
         image3 = Image.open(path+"\\"+file_path3)
-        st.image(image3, use_column_width='always')
+        st.image(image3, use_column_width='always', caption='src: Google Images')
 except FileNotFoundError:
     st.text('No Images Available')
 except IndexError:
