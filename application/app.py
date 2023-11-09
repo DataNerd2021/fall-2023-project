@@ -5,7 +5,7 @@ import os
 from PIL import Image
 
 st.set_page_config(page_title='Price Recommendation App')
-st.title('Prediction App')
+st.title('Selling Price Recommendation App')
 training_data = pl.read_parquet('../training_data.parquet')
 year_selection = st.slider(label='Year', min_value=2011, max_value=2023)
 
