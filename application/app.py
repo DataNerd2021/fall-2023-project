@@ -1,5 +1,6 @@
 '''This will be the Front End Application'''
 import streamlit as st
+import time
 import polars as pl
 import os
 from PIL import Image
@@ -129,4 +130,8 @@ except FileNotFoundError:
 except IndexError:
     st.text('No Images Available')
 
-submit_btn = st.button(label='Submit',on_click=RecommendationModelInference(year_selection,make_selection,model_selection,trim_selection,mileage_input,exterior_color_selector,interior_color_selector,accidents_input,owners_input,usage_type_selector,city_selector,state_selector))
+submit_btn = st.button(label='Submit')
+
+if submit_btn:
+    with st.spinner('Running inference...'):
+        RecommendationModelInference(year_selection,make_selection,model_selection,trim_selection,mileage_input,exterior_color_selector,interior_color_selector,accidents_input,owners_input,usage_type_selector,city_selector,state_selector)

@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from pandasql import sqldf
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeRegressor
@@ -49,5 +50,5 @@ def RecommendationModelInference(year:int,make:str,model:str,trim:str,mileage:in
         state_encoded = state_encoded.values[0][0]
     except:
         state_encoded = 0
-    recommendation = recommendation_model.predict(X=[[year,make_encoded,model_encoded,trim_encoded,mileage,exterior_color_encoded,interior_color_encoded,num_accidents,num_owners,usage_type_encoded,city_encoded,state_encoded]])
-    st.markdown(f'<h1>${recommendation[0]}</h1>', unsafe_allow_html=True)
+    recommendation = recommendation_model.predict(X=np.array([[year,make_encoded,model_encoded,trim_encoded,mileage,exterior_color_encoded,interior_color_encoded,num_accidents,num_owners,usage_type_encoded,city_encoded,state_encoded]]))
+    st.markdown(f'<h1>${round((recommendation[0]*.9), 2)}-${round((recommendation[0]*1.1), 2)}</h1>', unsafe_allow_html=True)
