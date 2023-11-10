@@ -3,6 +3,7 @@ import streamlit as st
 import polars as pl
 import os
 from PIL import Image
+from recommendation_model import RecommendationModelInference
 
 st.set_page_config(page_title='Price Recommendation App')
 st.title('Selling Price Recommendation App')
@@ -53,8 +54,7 @@ with col3:
     st.text('')
     owners_input = st.number_input(label="\# of Owners", min_value=0, max_value=5, value=1)
     
-filtered_ext_color_data = training_data.filter((pl.col('year') == year_selection) & (pl.col('make') == make_selection) & (pl.col('model') == model_selection))
-ext_colors = filtered_ext_color_data.select(pl.col('exterior_color'))
+ext_colors = training_data.select(pl.col('exterior_color'))
 ext_colors = ext_colors.unique()
 ext_colors = ext_colors.sort(by=['exterior_color'])
 ext_color_series = pl.Series(ext_colors.to_series())
@@ -63,10 +63,9 @@ ext_color_list = ext_color_series.to_list()
 with col1:
     st.text('')
     st.text('')
-    st.selectbox(label='Exterior Color', options=[ext_color for ext_color in ext_color_list])
+    exterior_color_selector = st.selectbox(label='Exterior Color', options=[ext_color for ext_color in ext_color_list])
 
-filtered_int_color_data = training_data.filter((pl.col('year') == year_selection) & (pl.col('make') == make_selection) & (pl.col('model') == model_selection))
-int_colors = filtered_int_color_data.select(pl.col('interior_color'))
+int_colors = training_data.select(pl.col('interior_color'))
 int_colors = int_colors.unique()
 int_colors = int_colors.sort(by=['interior_color'])
 int_color_series = pl.Series(int_colors.to_series())
@@ -75,8 +74,40 @@ int_color_list = int_color_series.to_list()
 with col2:
     st.text('')
     st.text('')
-    st.selectbox(label='Interior Color', options=[int_color for int_color in int_color_list])
+    interior_color_selector = st.selectbox(label='Interior Color', options=[int_color for int_color in int_color_list])
 
+usage_types = training_data.select(pl.col('usage_type'))
+usage_types = usage_types.unique()
+usage_types = usage_types.sort(by=['usage_type'])
+usage_type_series = pl.Series(usage_types.to_series())
+usage_type_list = usage_type_series.to_list()
+with col3:
+    st.text('')
+    st.text('')
+    usage_type_selector = st.selectbox(label='Use Type', options=[use_type for use_type in usage_type_list])
+
+states = training_data.select(pl.col('state'))
+states = states.unique()
+states = states.sort(by=['state'])
+states_series = pl.Series(states.to_series())
+state_list = states_series.to_list()
+
+with col1:
+    st.text('')
+    st.text('')
+    state_selector = st.selectbox(label='State', options=[state for state in state_list])
+
+cities = training_data.filter(pl.col('state') == state_selector)
+cities = cities.select(pl.col('city'))
+cities = cities.unique()
+cities = cities.sort(by=['city'])
+city_series = pl.Series(cities.to_series())
+city_list = city_series.to_list()
+
+with col2:
+    st.text('')
+    st.text('')
+    city_selector = st.selectbox(label='City', options=[city for city in city_list])
 
 col4, col5, col6 = st.columns([1,1,1])
 try:
@@ -97,3 +128,5 @@ except FileNotFoundError:
     st.text('No Images Available')
 except IndexError:
     st.text('No Images Available')
+
+submit_btn = st.button(label='Submit',on_click=RecommendationModelInference(year_selection,make_selection,model_selection,trim_selection,mileage_input,exterior_color_selector,interior_color_selector,accidents_input,owners_input,usage_type_selector,city_selector,state_selector))
