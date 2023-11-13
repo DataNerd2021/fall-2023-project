@@ -5,6 +5,12 @@ import polars as pl
 import os
 from PIL import Image
 from recommendation_model import RecommendationModelInference
+import os
+from openai import OpenAI
+
+client = OpenAI(api_key='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')
+
+
 
 st.set_page_config(page_title='Price Recommendation App')
 st.title('Selling Price Recommendation App')
@@ -130,7 +136,23 @@ except FileNotFoundError:
 except IndexError:
     st.text('No Images Available')
 
-submit_btn = st.button(label='Submit')
+col7, col8 = st.columns([1,5])
+with col7:
+    submit_btn = st.button(label='Submit')
+with col8:
+    message = f'Give me specifications on the {year_selection} {make_selection} {model_selection} {trim_selection}'
+
+    specs_btn = st.button(label='Get Specifications')
+    if specs_btn:
+        with st.spinner('Getting specifications...'):
+            completion = client.chat.completions.create(
+            model="gpt-4-1106-preview",
+            messages=[
+                {"role": "system", "content": "You are a motor vehicle journalist giving a brief overview of vehicles you are reviewing."},
+                {"role": "user", "content": f"{message}"}
+            ]
+            )
+            area = st.text_area(label='Output', value=completion.choices[0].message.content, height=500)
 
 if submit_btn:
     with st.spinner('Running inference...'):

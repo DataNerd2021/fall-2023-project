@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from pandasql import sqldf
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.tree import DecisionTreeRegressor
 
 training_data = pd.read_parquet('../training_data.parquet')
